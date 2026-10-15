@@ -186,3 +186,74 @@ a{color:var(--navy-700)}
 .legal p,.legal li{color:#33415c;line-height:1.7}
 .legal ul{padding-left:1.2em;margin:.5em 0}
 .legal .muted{color:#8a93a8;font-size:.9rem;margin-top:1.5em}
+
+/* ---- webixglobal.com parity: floating trust card ---- */
+.trust--float{background:transparent;border:0;position:relative;z-index:5;margin-top:-58px}
+.trust--float .trust__grid{background:#fff;border-radius:18px;box-shadow:0 20px 46px #041c3026;padding:26px 30px}
+.trust__dot svg{width:22px;height:22px;display:block}
+
+/* ---- centered sections + orange eyebrow ---- */
+.section--center .sec-eyebrow,.section--center .sec-title,.section--center .sec-sub{text-align:center}
+.section--center .sec-sub{margin-left:auto;margin-right:auto}
+.sec-eyebrow--orange{color:var(--amber-500)}
+
+/* ---- service cards (homepage: arrow bottom-left) ---- */
+.svc-card{display:flex;flex-direction:column;gap:12px;background:#fff;border:1px solid #06233c14;
+  border-radius:16px;padding:28px;text-decoration:none;box-shadow:0 10px 30px #041c3012;
+  transition:transform .18s,box-shadow .18s}
+.svc-card:hover{transform:translateY(-3px);box-shadow:0 16px 38px #041c3022}
+.svc-card__icon{width:46px;height:46px;flex:none;border-radius:12px;display:inline-flex;align-items:center;justify-content:center}
+.svc-card__icon svg{width:24px;height:24px;display:block}
+.svc-card__icon--green{background:#e5f4ec;color:#1d9d57}
+.svc-card__icon--blue{background:#e8f0fd;color:#2f6fed}
+.svc-card__icon--orange{background:#fdeede;color:#e8821e}
+.svc-card__body h3{margin:0 0 6px;color:var(--navy-950);font-size:1.12rem}
+.svc-card__body p{margin:0 0 6px;color:var(--muted);font-size:.92rem}
+.svc-card__body .tags{color:var(--navy-700);font-weight:700;font-size:.88rem}
+.svc-card__arrow{margin-top:auto;align-self:flex-start;width:38px;height:38px;flex:none;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:1.15rem;font-weight:800}
+.svc-card__arrow--green{background:#22a35c}
+.svc-card__arrow--blue{background:#2f6fed}
+.svc-card__arrow--orange{background:#e8821e}
+
+/* ---- service cards (services page: arrow right) ---- */
+.svc-card--row{flex-direction:row;align-items:center}
+.svc-card--row .svc-card__arrow{margin:0 0 0 auto;align-self:center}
+
+/* ---- dark why-choose section ---- */
+.why-dark{background:var(--navy-950);color:#fff;padding:76px 0}
+.why-dark__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.why-dark h2{color:#fff;font-size:clamp(1.8rem,3.6vw,2.5rem);line-height:1.2;margin:0 0 24px;font-weight:850}
+.check-list{list-style:none;margin:0;padding:0;display:grid;gap:15px}
+.check-list li{display:flex;align-items:center;gap:12px;font-weight:650;font-size:.98rem;color:#fffffff2}
+.check-list .ck{width:26px;height:26px;flex:none;border-radius:50%;background:#22b573;color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800}
+.why-cta{background:#0e2f4d;border:1px solid #ffffff1c;border-radius:18px;padding:38px}
+.why-cta h3{color:#fff;margin:0 0 10px;font-size:1.45rem;font-weight:800}
+.why-cta p{color:#ffffffc9;margin:0 0 24px}
+@media(max-width:820px){.why-dark__grid{grid-template-columns:1fr;gap:34px}.why-dark{padding:56px 0}}
+
+/* ---- dark CTA card (services page) ---- */
+.cta-dark{background:var(--navy-950);border-radius:20px;padding:48px;color:#fff}
+.cta-dark h2{color:#fff;margin:0 0 10px;font-size:clamp(1.5rem,3vw,2rem);font-weight:850}
+.cta-dark p{color:#ffffffc9;margin:0 0 24px;max-width:640px}
+@media(max-width:640px){.cta-dark{padding:32px 22px}}
+
+/* ---- light page hero (services page) ---- */
+.page-hero--light{background:#fff;color:var(--ink)}
+.page-hero--light h1{color:var(--navy-950)}
+.page-hero--light p{color:var(--muted)}
+.page-hero--light .crumbs{color:var(--muted)}
+.page-hero--light .crumbs a{color:var(--navy-950)}
+.page-hero--light .back-btn{background:var(--navy-950);color:#fff}
+.page-hero--light .back-btn:hover{background:var(--amber-400);color:var(--navy-950)}
+.page-hero--light .eyebrow{color:var(--amber-500)}
+
+/* ---- footer: white W mark on navy ---- */
+.site-footer .brand__mark path[fill="#071b31"]{fill:#fff}
+
+@media(max-width:640px){
+  .trust--float{margin-top:-40px}
+  .trust--float .trust__grid{padding:20px}
+  .svc-card--row{flex-wrap:wrap}
+}
