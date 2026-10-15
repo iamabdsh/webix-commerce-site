@@ -1,16 +1,31 @@
-// mobile menu + dropdown + back button
-document.addEventListener('DOMContentLoaded', function () {
-  var t = document.querySelector('.mobile-menu-toggle');
-  var m = document.querySelector('.mobile-menu');
-  if (t && m) {
-    t.addEventListener('click', function () {
-      var open = m.classList.toggle('open');
-      t.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    m.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { m.classList.remove('open'); });
-    });
+// mobile menu (mirrors source behaviour) + back button + mailto inquiry forms
+(function () {
+  var openButton = document.querySelector('[data-menu-open]');
+  var closeButton = document.querySelector('[data-menu-close]');
+  var backdrop = document.querySelector('[data-menu-backdrop]');
+  var menu = document.querySelector('[data-mobile-menu]');
+  var previousFocus = null;
+  function openMenu() {
+    previousFocus = document.activeElement;
+    document.body.classList.add('menu-open');
+    if (openButton) openButton.setAttribute('aria-expanded', 'true');
+    if (menu) menu.setAttribute('aria-hidden', 'false');
+    if (closeButton) closeButton.focus();
   }
+  function closeMenu() {
+    document.body.classList.remove('menu-open');
+    if (openButton) openButton.setAttribute('aria-expanded', 'false');
+    if (menu) menu.setAttribute('aria-hidden', 'true');
+    if (previousFocus && previousFocus.focus) previousFocus.focus();
+  }
+  if (openButton) openButton.addEventListener('click', openMenu);
+  if (closeButton) closeButton.addEventListener('click', closeMenu);
+  if (backdrop) backdrop.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', function (e) {
+    if (!document.body.classList.contains('menu-open')) return;
+    if (e.key === 'Escape') closeMenu();
+  });
+  if (menu) menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
   // back button
   document.querySelectorAll('[data-back]').forEach(function (b) {
     b.addEventListener('click', function (e) {
@@ -20,19 +35,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   // inquiry forms -> mailto
-  document.querySelectorAll('form[data-mailto]').forEach(function (f) {
+  document.querySelectorAll('form[data-inquiry-form]').forEach(function (f) {
     f.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (!f.reportValidity()) return;
       var d = new FormData(f);
+      var lines = [];
+      ['inquiryType', 'name', 'email', 'phone', 'company', 'fleetSize', 'subject', 'service'].forEach(function (k) {
+        var v = d.get(k);
+        if (v) lines.push(k + ': ' + v);
+      });
+      lines.push('', d.get('message') || '');
       var subject = encodeURIComponent(d.get('subject') || 'Website inquiry');
-      var body = encodeURIComponent(
-        'Name: ' + (d.get('name') || '') + '\n' +
-        'Email: ' + (d.get('email') || '') + '\n' +
-        'Subject: ' + (d.get('subject') || '') + '\n\n' +
-        (d.get('message') || '')
-      );
-      window.location.href = 'mailto:' + f.getAttribute('data-mailto') +
-        '?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:' + f.getAttribute('data-mailto') + '?subject=' + subject + '&body=' + encodeURIComponent(lines.join('\n'));
     });
   });
-});
+})();

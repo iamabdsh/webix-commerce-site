@@ -1,0 +1,31 @@
+# Webix Commerce Limited
+
+> UK-based company providing e-commerce management, truck dispatching and UK property services.
+
+Webix Commerce Limited helps businesses grow with professional e-commerce management
+(Shopify, TikTok Shop, eBay), product hunting, payment and account support,
+truck dispatching for UK and international operations, and UK property services
+including sourcing, sales support and investment opportunities.
+
+## Contact
+
+- Email: ecomwithwebix@gmail.com
+- WhatsApp: +44 7848 454771 (https://wa.me/447848454771)
+- Address: Office 21932, 182-184 High Street North, East Ham, London
+
+## Pages
+
+- [Home](https://webixcommerce.com/)
+- [About](https://webixcommerce.com/about/)
+- [Services](https://webixcommerce.com/services/)
+- [E-commerce Solutions](https://webixcommerce.com/services/e-commerce-solutions/)
+- [Shopify Management](https://webixcommerce.com/services/shopify-management/)
+- [TikTok Shop Management](https://webixcommerce.com/services/tiktok-shop-management/)
+- [eBay Management](https://webixcommerce.com/services/ebay-management/)
+- [Product Hunting](https://webixcommerce.com/services/product-hunting/)
+- [Payment & Account Support](https://webixcommerce.com/services/payment-account-support/)
+- [UK Property Services](https://webixcommerce.com/services/uk-property-services/)
+- [Truck Dispatching](https://webixcommerce.com/truck-dispatching/)
+- [Contact](https://webixcommerce.com/contact/)
+- [Privacy Policy](https://webixcommerce.com/privacy/)
+- [Terms & Conditions](https://webixcommerce.com/terms/)
